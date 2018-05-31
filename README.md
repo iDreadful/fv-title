@@ -5,4 +5,4 @@ This allows to include formatted texts to browser native tooltips which do not s
 
 You can combine those to format text in a better way.
 
-Demo: 
+Demo: https://idreadful.github.io/fv-title/
