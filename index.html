@@ -1,0 +1,84 @@
+<!DOCUMENT html>
+<html>
+  <head>
+
+  <style>
+  body {
+    font-family: sans-serif;
+    margin: 50px;
+  }
+
+  p {
+    line-height: 2em;
+  }
+
+table {
+      border-collapse: collapse;
+}
+
+  table td {
+    border: 1px solid #f2f2f2;
+    padding: 20px;
+  }
+
+  .test-area {
+    border: 1px dashed #ddd;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  </style>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="runes.js"></script>
+    <script src="fv-title.js"></script>
+
+  </head>
+  </body>
+  <h1>Font variants in tooltips</h1>
+  <div class="test-area" title="Regular tooltip text. Text formatting is not supported.">Native tooltips — test me!</div>
+  <p>Utilizing unicode built-in font variants it's possible to create formatted text without any markup.<br>This allows to include formatted texts to browser native tooltips which do not support any formatting.</p>
+  <p><a href="https://www.compart.com/en/unicode/decomposition/%3Cfont%3E">https://www.compart.com/en/unicode/decomposition/%3Cfont%3E</a></p>
+    <table>
+      <tr>
+        <td><div class="test-area" fv-title="<b>Bold text</b>"><b>Bold — test me!</b></div></td>
+        <td><div class="test-area" fv-title="<i>Italic text</i>"><i>Italic — test me!</i></div></td>
+        <td><div class="test-area" fv-title="<bi>Bold italic text</bi>"><b><i>Bold Italic — test me!</i></b></div></td>
+      </tr>
+      <tr>
+        <td>
+<xmp>
+<div fv-title="<b></b>"></div>
+</xmp>
+        </td>
+        <td>
+<xmp>
+<div fv-title="<i></i>"></div>
+</xmp>
+        </td>
+        <td>
+<xmp>
+<div fv-title="<bi></bi>"></div>
+</xmp>
+        </td>
+      </tr>
+    </table>
+    <p>You can combine those to format text in a better way.</p>
+    <p><div class="test-area" fv-title="<b>The standard Lorem Ipsum passage, used since the 1500s</b>&#013;&#013;
+<i>Lorem ipsum dolor sit amet</i>, consectetur adipiscing elit, <b>sed do eiusmod</b> tempor incididunt ut labore et dolore magna aliqua.&#013;&#013;
+Ut enim ad minim veniam, quis nostrud exercitation ullamco <bi>laboris nisi ut aliquip ex ea commodo consequat</bi>">Mixed — test me!</div></p>
+  </body>
+</html>
+
+<script>
+
+$(document).ready( function(){
+
+  fv_start();
+
+});
+
+</script>
